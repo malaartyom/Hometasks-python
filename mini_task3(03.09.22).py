@@ -1,0 +1,6 @@
+def create_matrix(a):
+    return [[float(j) for j in i.split()] for i in a.split("|")]
+
+
+a = "1 2 3 | 4 5 6 | 7 8 9 "
+print(create_matrix(a))
