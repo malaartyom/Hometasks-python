@@ -9,9 +9,9 @@ def deprecated(f=None, since=None, will_be_removed=None):
         second = "."
         third = " It will be removed in"
         fourth = " future versions "
-        if since is not None:
+        if since:
             second = f" since version {since}."
-        if will_be_removed is not None:
+        if will_be_removed:
             fourth = f" version {will_be_removed}"
         print(first + second + third + fourth)
         f(*args, **kwargs)
