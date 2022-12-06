@@ -4,14 +4,14 @@ class LRUCache:
         self.data = dict()
         self.len = 0
         self.call = dict()
-    
+
     def put(self, key, value):
         if self.len < self.cap:
             if key in self.data.keys():
                 self.call[key] += 1
             else:
                 self.call[key] = 0
-                
+
             self.data[key] = value
         else:
             key_to_del = min(self.call, key=lambda x: self.call[x])
