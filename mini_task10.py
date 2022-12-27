@@ -16,6 +16,7 @@ class LRUCache:
         else:
             key_to_del = min(self.call, key=lambda x: self.call[x])
             del self.data[key_to_del]
+            del self.call[key_to_del]
 
     def get(self, key):
         if (key, self.data[key]) in self.data.items():

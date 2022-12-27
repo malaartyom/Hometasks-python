@@ -1,7 +1,6 @@
 def cycle(itr):
     while True:
-        for i in itr:
-            yield i
+        yield from itr
 
 def take(seq, n):
     res = []

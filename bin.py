@@ -1,6 +1,10 @@
-a = {1: 17, 2: 15, 3:9, 4:21}
-print(min(a, key = lambda x: a[x]))
-if (1, 17) in a.items():
-    print(1)
-else:
-    print(0)
+import numpy as np
+a = np.array([])
+s = np.array([])
+s1 = np.array([])
+s = np.append(s, [1 ,2])
+s1 = np.append(s1, [3, 4])
+a = np.append(a, s)
+a = np.append(a, s1)
+a = a.reshape(2,2)
+print(a[0][1])

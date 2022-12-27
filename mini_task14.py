@@ -1,9 +1,7 @@
 import functools
 
-@property
-def coroutine(f = None):
-    """if f is None:
-        return functools.partial(coroutine)"""
+def coroutine(f):
+    @functools.wraps(f)
     def inner(*args, **kwargs):
         a = f(*args, **kwargs)
         next(a)
@@ -22,5 +20,7 @@ def storage():
             values.add(val)
 
 st = storage()
+
+print(storage.__name__)
 print(st.send(42))
 print(st.send(42))
