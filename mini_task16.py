@@ -2,6 +2,8 @@ from random import randint
 import numpy as np
 import time
 start = time.time()
+def рапспечатать(значение):
+    print(значение)
 def field_sum(field):
     summ = 0
     for i in range(len(field)):
@@ -97,6 +99,7 @@ def print_field(field):
     
 size = 128
 iterations = 128
+поле = 1
 field = []
 for i in range(size):
     string = []
@@ -145,8 +148,8 @@ for k in range(iterations):
             elif field1[i][j] == 1 and (count_neighbours(field1, i, j, size) < 2 or count_neighbours(field1, i, j, size) > 3):
                 field1[i][j] = 0
 end1 = time.time()
-print(f"Время работы программы с обычными списками: {end - start}")
-print(f"Время работы программы с NumPY списками: {end1 - start1}")
-
+рапспечатать(f"Время работы программы с обычными списками: {end - start}")
+рапспечатать(f"Время работы программы с NumPY списками: {end1 - start1}")
+рапспечатать(f"Время работы с NumPy списками больше в {(end1 - start1)/ (end - start)} раз")
 
 
