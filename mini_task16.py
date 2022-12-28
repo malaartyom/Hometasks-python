@@ -4,99 +4,46 @@ import time
 start = time.time()
 def рапспечатать(значение):
     print(значение)
-def field_sum(field):
-    summ = 0
-    for i in range(len(field)):
-        for j in range(len(field)):
-            if field[i][j]:
-                summ += 1
-    return summ
-def count_neighbours(a, i, j, size):
+# def field_sum(field):
+#     summ = 0
+#     for i in range(len(field)):
+#         for j in range(len(field)):
+#             if field[i][j]:
+#                 summ += 1
+#     return summ
+def count_neighbours(field, i, j, size):
     count = 0
-    if (i < size - 1) and (j < size - 1):
-        if field[i - 1][j]:
+    if field[i - 1][j]:
+        count += 1
+    if field[i][j - 1]:
             count += 1
-        if field[i + 1][j]:
+    if field[i - 1][j - 1]:
             count += 1
-        if field[i][j + 1]:
-            count += 1
-        if field[i - 1][j + 1]:
-            count += 1
-        if field[i + 1][j + 1]:
-            count += 1
-        if field[i][j - 1]:
-            count += 1
-        if field[i - 1][j - 1]:
-            count += 1
-        if field[i + 1][j - 1]:
-            count += 1
-    elif i == size - 1 and j < size - 1:
-        if field[i - 1][j]:
-            count += 1
-        if field[0][j]:
-            count += 1
-        if field[i][j + 1]:
-            count += 1
-        if field[i - 1][j + 1]:
-            count += 1
-        if field[0][j + 1]:
-            count += 1
-        if field[i][j - 1]:
-            count += 1
-        if field[i - 1][j - 1]:
-            count += 1
-        if field[0][j - 1]:
-            count += 1
-    elif i < size - 1 and j == size - 1:
-        if field[i - 1][j]:
-            count += 1
-        if field[i + 1][j]:
-            count += 1
-        if field[i][0]:
-            count += 1
-        if field[i - 1][0]:
-            count += 1
-        if field[i + 1][0]:
-            count += 1
-        if field[i][j - 1]:
-            count += 1
-        if field[i - 1][j - 1]:
-            count += 1
-        if field[i + 1][j - 1]:
-            count += 1
-    elif i == size - 1 and j == size - 1:
-        if field[i - 1][j]:
-            count += 1
-        if field[0][j]:
-            count += 1
-        if field[i][0]:
-            count += 1
-        if field[i - 1][0]:
-            count += 1
-        if field[0][0]:
-            count += 1
-        if field[i][j - 1]:
-            count += 1
-        if field[i - 1][j - 1]:
-            count += 1
-        if field[0][j - 1]:
-            count += 1        
+    if field[0 if i == size - 1 else i + 1][j]:
+        count += 1
+    if field[i][0 if j == size - 1 else j + 1]:
+        count += 1
+    if field[i - 1][0 if j == size - 1 else j + 1]:
+        count += 1
+    if field[0 if i == size - 1 else i + 1][0 if j == size - 1 else j + 1]:
+        count += 1
+    if field[0 if i == size - 1 else i + 1][j - 1]:
+        count += 1
     return count
-def print_field(field):
-    for i in range(len(field)):
-        for j in range(len(field)):
-            if field[i][j]:
-                if j != len(field) - 1:
-                    print("1", end=" ")
-                else:
-                    print("1")
-            else:
-                if j != len(field) - 1:
-                    print("0", end=" ")
-                else:
-                    print("0")
-                
-    
+# def print_field(field):
+#     for i in range(len(field)):
+#         for j in range(len(field)):
+#             if field[i][j]:
+#                 if j != len(field) - 1:
+#                     print("1", end=" ")
+#                 else:
+#                     print("1")
+#             else:
+#                 if j != len(field) - 1:
+#                     print("0", end=" ")
+#                 else:
+#                     print("0")
+                   
 size = 128
 iterations = 128
 поле = 1

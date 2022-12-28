@@ -8,3 +8,6 @@ a = np.append(a, s)
 a = np.append(a, s1)
 a = a.reshape(2,2)
 print(a[0][1])
+str = b"Hello"
+str1 = "Hello п"
+print(str1.encode("utf-8"))
